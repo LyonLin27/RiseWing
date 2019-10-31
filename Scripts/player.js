@@ -123,9 +123,9 @@ class Player extends Phaser.GameObjects.Sprite {
                     this.rect.x = player.x/2;
                     this.rect.y = player.y/2;
                     this.emitter.explode(5*this.remainJump, this.rect.x-this.rect.width/2, this.rect.y-this.rect.height/2);
+                    this.jumpSFX.play();
                 }
                 animKey = "p_jumpS";
-                this.jumpSFX.play();
 
                 this.inAir = true;
 
