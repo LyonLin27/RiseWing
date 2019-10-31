@@ -1,0 +1,1 @@
+[{"spritename":"Character%20Temp%20Idle%201.png","x":0,"y":0,"height":485,"width":571},{"spritename":"Character%20Temp%20Idle%202.png","x":0,"y":485,"height":485,"width":571},{"spritename":"Character%20Temp%20Idle%203.png","x":0,"y":970,"height":485,"width":571},{"spritename":"Character%20Temp%20Idle%204.png","x":0,"y":1455,"height":485,"width":571}]

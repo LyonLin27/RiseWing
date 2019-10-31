@@ -1,0 +1,183 @@
+{
+    "MothDialog":{
+        "Wings0":{
+            "talk":{
+                "1": "\"Oh... Doesn't that hurt?\"",
+                "2": "\"Are you in pain?\"",
+                "3": "\"I... don't want to talk to you. Sorry.\"",
+                "4": "\"Please go away...\"",
+                "5": "\"How do you even get around?\""
+            },
+            "text":{
+                "1": "The moth looks away from you.",
+                "2": "The moth coughs awkwardly before looking away.",
+                "3": "The moth shuffles its feet awkwardly, and glances from side to side.",
+                "4": "The moth fiddles with somthing in its hands, looking at the object instead of you.",
+                "5": "The moth smooths back its antennae and smiles uncomfortably."
+            }
+        },
+        "Wings2":{
+            "talk":{
+                "1": "\"Did you lose a pair of wings?\"",
+                "2": "\"Hello.\"",
+                "3": "\"Hm? Can I help you with something?\"",
+                "4": "\"Lovely weather we're having. ...Or something.\"",
+                "5": "\"What happened to your other wings?\""
+            },
+            "text":{
+                "1": "The moth eyes you curiously.",
+                "2": "The moth smiles and waves politely.",
+                "3": "The moth smiles as you pass by.",
+                "4": "The moth gives you a nod of acknowledgement as you pass.",
+                "5": "The moth stares at your wings."
+            }
+        },
+        "Wings4":{
+            "talk":{
+                "1": "\"Hello, my friend! How do you do?\"",
+                "2": "\"I don't think I've seen you around before. Are you new here?\"",
+                "3": "\"Oh! What lovely wings!\"",
+                "4": "\"Good day!\"",
+                "5": "\"Well met, my friend!\""
+            },
+            "text":{
+                "1": "The moth smiles and waves happily.",
+                "2": "The moth shakes your hand warmly.",
+                "3": "The moth spreads its wings, and you spread yours in return. It gives you a satisfied nod before relaxing them.",
+                "4": "The moth offers a quick race to the end of the branch. You both eagerly fly to it; the moth beats you by a hair.",
+                "5": "The moth chats with you for a few minutes about various topics."
+            }
+        },
+        "Wings6":{
+            "talk":{
+                "1": "\"Oh... Oh, dear, what happened to you?\"",
+                "2": "\"Please stop smiling at me like that...\"",
+                "3": "\"What did you do...?\"",
+                "4": "\"...Oh, no...\"",
+                "5": "\"That can't be healthy...!\""
+            },
+            "text":{
+                "1": "The moth's eyes widen in shock.",
+                "2": "The moth recoils visibly at the sight of you.",
+                "3": "The moth gasps when it lays eyes on you.",
+                "4": "The moth covers its mouth as it gasps.",
+                "5": "The moth reaches toward you, shaking slightly, but retracts its hand before it touches you."
+            }
+        },
+        "Wings8":{
+            "talk":{
+                "1": "\"\"",
+                "2": "\"\"",
+                "3": "\"\"",
+                "4": "\"\"",
+                "5": "\"\""
+            },
+            "text":{
+                "1": "The moth scurries away in a panic.",
+                "2": "The moth clips its wing on a branch as it hurries to fly away from you.",
+                "3": "The moth backs away, screaming.",
+                "4": "The moth stumbles backwards before turning and fleeing",
+                "5": "The moth stands, shell-shocked, before regaining its senses and flying away."
+            }
+        },
+        "Special":{
+				"1": "\"You look like me. Someone else who looks like me...\"",
+				"2": "\"Oh! Wings! Where did you get those wings?\"",
+				"3": "\"You look great. Like everyone else. I'm so happy for you...\""
+		}
+    },
+
+    "ButterflyDialog":{
+        "Wings0":{
+            "talk":{
+                "1": "\"\"",
+                "2": "\"\"",
+                "3": "\"\"",
+                "4": "\"\"",
+                "5": "\"\""
+            },
+            "text":{
+                "1": "The butterfly glares at you and says nothing before walking away.",
+                "2": "The butterfly turns on its heel and walks in the other direction.",
+                "3": "The butterfly walks past you without a word.",
+                "4": "The butterfly ignores you and flies away.",
+                "5": "The butterfly pretends to spot something in the distance, and walks away form you to investigate."
+            }
+        },
+        "Wings2":{
+            "talk":{
+                "1": "\"You're blocking my view.\"",
+                "2": "\"Out of my way.\"",
+                "3": "\"I'm busy. Get out of my way.\"",
+                "4": "\"Ugh.\"",
+                "5": "\"...Are you talking to me? Seriously?\""
+            },
+            "text":{
+                "1": "The butterfly looks you up and down, disgust etched into its expression.",
+                "2": "The butterfly scrunches up its proboscis at the sight of your wings.",
+                "3": "The butterfly rolls its eyes as you approach.",
+                "4": "The butterfly glares at you disdainfully and scoffs.",
+                "5": "The butterfly lets out a \"harumph\" as you approach."
+            }
+        },
+        "Wings4":{
+            "talk":{
+                "1": "\"Well, your wings have a nice pattern, at least.\"",
+                "2": "\"Hi.\"",
+                "3": "\"Your wings are nice. For a moth.\"",
+                "4": "\"...What do you want from me?\"",
+                "5": "\"Sorry, I don't do any charity.\""
+            },
+            "text":{
+                "1": "The butterfly glances in your direction as you go past.",
+                "2": "The butterfly gives you a forced smile.",
+                "3": "The butterfly doesn't react to your presence.",
+                "4": "The butterfly raises an eyebrow at you.",
+                "5": "The butterfly gives you a small smile."
+            }
+        },
+        "Wings6":{
+            "talk":{
+                "1": "\"Wh... What are you?!\"",
+                "2": "\"Help! Someone help!\"",
+                "3": "\"Aaauuuugh! Disgusting!\"",
+                "4": "\"Freak! Freak!\"",
+                "5": "\"Get away from me! Get away!\""
+            },
+            "text":{
+                "1": "The butterfly's eyes widen at the sight of you.",
+                "2": "The butterfly cowers.",
+                "3": "The butterfly cowers and screams in terror.",
+                "4": "The butterfly backs away in fear.",
+                "5": "The butterfly covers its proboscis, heaving and retching."
+            }
+        },
+        "Wings8":{
+        	"talk":{
+                "1": "\"\"",
+                "2": "\"\"",
+                "3": "\"\"",
+                "4": "\"\"",
+                "5": "\"\""
+            },
+            "text":{
+                "1": "The butterfly scurries away in a panic.",
+                "2": "The butterfly clips its wing on a branch as it hurries to fly away from you.",
+                "3": "The butterfly backs away, screaming.",
+                "4": "The butterfly stumbles backwards before turning and fleeing",
+                "5": "The butterfly stands, shell-shocked, before regaining its senses and flying away."
+            }
+        },
+        "GoodEnd":{
+        	"1": "\"Did you really just-? Oh! Thank you! Thank you!\""
+        },
+        "End":{
+            "1": "\"Hah... Haf... Hah...",
+			"2": "\"You... made it up here too?\"",
+			"3": "\"Not that... haf... I'm surprised! Your wings, they're- they're beautiful.\"",
+			"4": "\"I... I only wish...\""
+        }
+    }
+    
+    
+}
