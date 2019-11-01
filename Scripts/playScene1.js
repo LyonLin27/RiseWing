@@ -143,6 +143,9 @@ class playScene1 extends Phaser.Scene{
             asset.setScrollFactor(scrollFac);
         }
 
+        let overlay = this.add.image(game.config.width*0.5,this.physics.world.bounds.bottom*0.5,"overlay1");
+        overlay.setScrollFactor(0);
+
 
         // add platforms
 
@@ -228,6 +231,13 @@ class playScene1 extends Phaser.Scene{
         this.physics.add.overlap(this.player.getBody(), this.end.levelEnd, this.AdvanceLevel);
 
         this.time.delayedCall(1000, ()=>{this.whiteAlphaTar = 0}, []);
+
+        this.music = this.sound.add("bgm1");
+        var musicConfig = {
+            volume: 0.5,
+            loop: true
+        }
+        this.music.play(musicConfig);
     }
 
     KillPlayer(player, web){

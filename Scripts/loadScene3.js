@@ -8,6 +8,7 @@ class loadScene3 extends Phaser.Scene{
     preload(){
         this.whiteScreen = this.add.image(game.config.width*0.5,game.config.height*0.5, "loadingBG");
         this.add.text(game.config.width*0.2,game.config.height*0.9, "Now Loading...", {font:"60px MyBolton",fill: "#555555"});
+        this.add.text(game.config.width*0.05,game.config.height*0.95, "Pyotr Ilyich Tchaikovsky,Borodin Quartet,Yuri Yurov \nString Quartet No 1 in D Major, Op 11：II Andante cantabile", {font:"30px MyBolton",fill: "#555555"});
 
         this.loadPlayer();
         this.loadEnv();
@@ -209,10 +210,10 @@ class loadScene3 extends Phaser.Scene{
         this.load.image("fore_3l3", "Assets/Level 3/Foreground_Building_3_L.png");
         this.load.image("fore_3r3", "Assets/Level 3/Foreground_Building_3_R.png");
 
-        // level end
-        this.load.image("levelEnd", "Assets/UI Assets/Level_End_UI.png");
-    }
+        this.load.image("overlay3", "Assets/UI Assets/Level_3_Overlay.png");
 
+    }
+    
     loadUtility(){
         //load Branch PLatforms
         this.load.image("center1", "Assets/Branch Platforms/Branch_Center_1.png");
@@ -236,14 +237,14 @@ class loadScene3 extends Phaser.Scene{
         // this.load.image("left2ex", "Assets/Branch Platforms/White Platforms/White_Branch_L_2.png");
         // this.load.image("right1ex", "Assets/Branch Platforms/White Platforms/White_Branch_R_1.png");
         // this.load.image("right2ex", "Assets/Branch Platforms/White Platforms/White_Branch_R_2.png");
-
+        
         // load jump ui
         this.load.image("jump_ui_black", "Assets/UI Assets/UI_Jump_Black.png");
         this.load.image("jump_ui_gold", "Assets/UI Assets/UI_Jump_Gold.png");
-
+        
         //load spiderweb
         this.load.image("spiderWeb", "Assets/UI Assets/Spiderweb UI.png");
-
+        
         // load checkpoint
         this.load.spritesheet("checkpoint_grow", "Assets/UI Assets/Branch_UI_Sprite_Sheet.png",{
             frameWidth: 1024,
@@ -257,20 +258,20 @@ class loadScene3 extends Phaser.Scene{
             frameWidth: 1024,
             frameHeight: 1024
         });
-
+        
         // load wing item
         this.load.spritesheet("wingItem", "Assets/UI Assets/Wing_Pickup_UI_Sprite_Sheet.png",{
             frameWidth: 1024,
             frameHeight: 1024
         });
-
-
+        
+        
         this.load.json("checkpointData", 'Assets/Text/checkpoints.json');
 
         // load white / black screen
         this.load.image("blackScreen", "Assets/black.png");
         this.load.image("whiteScreen", "Assets/white.png");
-
+        
         //load crumbling platform
         this.load.spritesheet("crumbling_break", "Assets/Branch Platforms/Crumbling Branch/Crumbling_Break_Sprite_Sheet.png",{
             frameWidth: 1024,
@@ -284,8 +285,11 @@ class loadScene3 extends Phaser.Scene{
             frameWidth: 1024,
             frameHeight: 589
         });
-
+        
         this.load.image("crumbling_platform", "Assets/Branch Platforms/Crumbling Branch/crumbling_Platform.png");
+        
+        // level end
+        this.load.image("levelEnd", "Assets/UI Assets/Level_End_UI.png");
     }
 
     loadNPC(){
@@ -344,6 +348,8 @@ class loadScene3 extends Phaser.Scene{
         this.load.audio("deathSFX", "Assets/SFX/audio_death.wav");
         this.load.audio("jumpSFX", "Assets/SFX/audio_jump_and_fly.wav");
         this.load.audio("landSFX", "Assets/SFX/audio_landing_on_platform.wav");
+
+        this.load.audio("bgm1", "Assets/Music/lv3.mp3");
     }
 
 }

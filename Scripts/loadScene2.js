@@ -8,6 +8,7 @@ class loadScene2 extends Phaser.Scene{
     preload(){
         this.whiteScreen = this.add.image(game.config.width*0.5,game.config.height*0.5, "loadingBG");
         this.add.text(game.config.width*0.2,game.config.height*0.9, "Now Loading...", {font:"60px MyBolton",fill: "#555555"});
+        this.add.text(game.config.width*0.05,game.config.height*0.95, "Gottfried von der Goltz,Antonio Vivaldi \nThe Four Seasons： Violin Concerto No. 4 in F Minor, RV 297, ＂Winter＂： II. Largo", {font:"30px MyBolton",fill: "#555555"});
 
         this.loadPlayer();
         this.loadEnv();
@@ -212,6 +213,8 @@ class loadScene2 extends Phaser.Scene{
         this.load.image("fore_2r2", "Assets/Level 2 Assets/Foreground_Building_2_R.png");
         this.load.image("fore_2l3", "Assets/Level 2 Assets/Foreground_Building_3_L.png");
         this.load.image("fore_2r3", "Assets/Level 2 Assets/Foreground_Building_3_R.png");
+
+        this.load.image("overlay2", "Assets/UI Assets/Level_2_Overlay.png");
     }
 
     loadUtility(){
@@ -337,6 +340,7 @@ class loadScene2 extends Phaser.Scene{
         this.load.audio("deathSFX", "Assets/SFX/audio_death.wav");
         this.load.audio("jumpSFX", "Assets/SFX/audio_jump_and_fly.wav");
         this.load.audio("landSFX", "Assets/SFX/audio_landing_on_platform.wav");
+        this.load.audio("bgm1", "Assets/Music/lv2.mp3");
     }
 
 }

@@ -8,6 +8,7 @@ class loadScene1 extends Phaser.Scene{
     preload(){
         this.whiteScreen = this.add.image(game.config.width*0.5,game.config.height*0.5, "loadingBG");
         this.add.text(game.config.width*0.2,game.config.height*0.9, "Now Loading...", {font:"60px MyBolton",fill: "#555555"});
+        this.add.text(game.config.width*0.05,game.config.height*0.95, "La Concordanza,Irene De Ruvo \nConcerto grosso No. 9 in C Minor ＂Victoria Maesta＂： III. Grave", {font:"30px MyBolton",fill: "#555555"});
 
 
         this.loadPlayer();
@@ -214,7 +215,7 @@ class loadScene1 extends Phaser.Scene{
         this.load.image("fore_1l3", "Assets/Level 1/Foreground Building 3_L.png");
         this.load.image("fore_1r3", "Assets/Level 1/Foreground Building 3_R.png");
 
-        
+        this.load.image("overlay1", "Assets/UI Assets/Level_1_Overlay.png");
 
     }
 
@@ -308,5 +309,7 @@ class loadScene1 extends Phaser.Scene{
         this.load.audio("deathSFX", "Assets/SFX/audio_death.wav");
         this.load.audio("jumpSFX", "Assets/SFX/audio_jump_and_fly.wav");
         this.load.audio("landSFX", "Assets/SFX/audio_landing_on_platform.wav");
+
+        this.load.audio("bgm1", "Assets/Music/lv1.mp3");
     }
 }
