@@ -233,15 +233,15 @@ class Player extends Phaser.GameObjects.Sprite {
         }
 
         // CHEAT
-        // let cheat = this.scene.input.keyboard.addKey("C");
-        // if(cheat.isDown){
-        //     this.remainJump = this.maxJump;
-        // }
+        let cheat = this.scene.input.keyboard.addKey("C");
+        if(cheat.isDown){
+            this.remainJump = this.maxJump;
+        }
 
-        // let reportPos = this.scene.input.keyboard.addKey("R");
-        // if(reportPos.isDown){
-        //     console.log("Player X: " + player.x + " Player Y: " + this.scene.denormalize(player.y));
-        // }
+        let reportPos = this.scene.input.keyboard.addKey("R");
+        if(reportPos.isDown){
+            console.log("Player X: " + player.x + " Player Y: " + this.scene.denormalize(player.y));
+        }
 
     }
 
