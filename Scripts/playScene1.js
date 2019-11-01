@@ -290,7 +290,10 @@ class playScene1 extends Phaser.Scene{
         player.body.setAllowGravity(false);
         player.scene.checkpointData.CurrentCheckpoint = 1;
         localStorage.setItem("save_checkpoint", 1);
-        player.scene.time.delayedCall(1000, ()=>{player.scene.scene.start("load2");}, []);
+        player.scene.time.delayedCall(1000, ()=>{
+            player.scene.music.stop();
+            player.scene.scene.start("load2");
+        }, []);
     }
 
     update(time, delta){

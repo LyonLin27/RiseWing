@@ -307,9 +307,15 @@ class playScene3 extends Phaser.Scene{
        // localStorage.setItem("save_level", 1);
        // localStorage.setItem("collected_wings", 0);
        if(localStorage.getItem("collected_wings") == "1"){
-            player.scene.time.delayedCall(1000, ()=>{player.scene.scene.start("ending_bad");}, []);
+            player.scene.time.delayedCall(1000, ()=>{
+                player.scene.music.stop();
+                player.scene.scene.start("ending_bad");
+            }, []);
        }else{
-            player.scene.time.delayedCall(1000, ()=>{player.scene.scene.start("ending_good");}, []);
+            player.scene.time.delayedCall(1000, ()=>{
+                player.scene.music.stop();
+                player.scene.scene.start("ending_good");
+            }, []);
        }
    }
 
