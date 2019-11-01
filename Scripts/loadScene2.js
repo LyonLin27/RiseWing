@@ -185,13 +185,13 @@ class loadScene2 extends Phaser.Scene{
 
     loadEnv(){
         // load environment assets
-        this.load.image("bg_2_1", "Assets/Level 2/Sky/sky_1.png");
-        this.load.image("bg_2_2", "Assets/Level 2/Sky/sky_2.png");
-        this.load.image("bg_2_3", "Assets/Level 2/Sky/sky_3.png");
-        this.load.image("bg_2_4", "Assets/Level 2/Sky/sky_4.png");
-        this.load.image("bg_2_5", "Assets/Level 2/Sky/sky_5.png");
-        this.load.image("bg_2_6", "Assets/Level 2/Sky/sky_6.png");
-        this.load.image("bg_2_7", "Assets/Level 2/Sky/sky_7.png");
+        this.load.image("bg_2_1", "Assets/Level 2/Sky/Sky1.png");
+        this.load.image("bg_2_2", "Assets/Level 2/Sky/Sky2.png");
+        this.load.image("bg_2_3", "Assets/Level 2/Sky/Sky3.png");
+        this.load.image("bg_2_4", "Assets/Level 2/Sky/Sky4.png");
+        this.load.image("bg_2_5", "Assets/Level 2/Sky/Sky5.png");
+        this.load.image("bg_2_6", "Assets/Level 2/Sky/Sky6.png");
+        this.load.image("bg_2_7", "Assets/Level 2/Sky/Sky7.png");
 
         this.load.image("back_2l1", "Assets/Level 2/Background_Tree_1_L.png");
         this.load.image("back_2r1", "Assets/Level 2/Background_Tree_1_R.png");
