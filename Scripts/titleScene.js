@@ -42,6 +42,8 @@ class titleScene extends Phaser.Scene{
             repeat: 0
         });
 
+        localStorage.setItem("test_mode", "0");
+
         this.blackBG = this.add.image(game.config.width*0.5,game.config.height*0.5, "titleBG");
         this.blackBG.scale  = 1;
         this.blackBG.alpha = 1;
@@ -122,6 +124,12 @@ class titleScene extends Phaser.Scene{
         //     this.whiteAlphaTar = 1;
         //     this.time.delayedCall(1000, ()=>{ this.scene.start("ending_good")}, []);
         // })
+
+        let num_key = this.input.keyboard.addKey("ZERO");
+        if(num_key.isDown){
+            console.log("test mode on");
+            localStorage.setItem("test_mode", "1");
+        }
     }
 
     update(time, delta){

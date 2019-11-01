@@ -98,6 +98,8 @@ class Player extends Phaser.GameObjects.Sprite {
         };
         var particles = this.scene.add.particles("star");
         this.emitter = particles.createEmitter(particlesConfig);
+
+        this.testMode = localStorage.getItem("test_mode") == "1";
     }
 
     update(time, delta){
@@ -232,15 +234,17 @@ class Player extends Phaser.GameObjects.Sprite {
                 player.play(animKey+animWingCount);
         }
 
-        // CHEAT
-        let cheat = this.scene.input.keyboard.addKey("C");
-        if(cheat.isDown){
-            this.remainJump = this.maxJump;
-        }
-
-        let reportPos = this.scene.input.keyboard.addKey("R");
-        if(reportPos.isDown){
-            console.log("Player X: " + player.x + " Player Y: " + this.scene.denormalize(player.y));
+        if(this.testMode){
+            // CHEAT
+            let cheat = this.scene.input.keyboard.addKey("C");
+            if(cheat.isDown){
+                this.remainJump = this.maxJump;
+            }
+    
+            let reportPos = this.scene.input.keyboard.addKey("R");
+            if(reportPos.isDown){
+                console.log("Player X: " + player.x + " Player Y: " + this.scene.denormalize(player.y));
+            }
         }
 
     }
