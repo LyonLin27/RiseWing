@@ -185,34 +185,34 @@ class loadScene2 extends Phaser.Scene{
 
     loadEnv(){
         // load environment assets
-        this.load.image("bg_2_1", "Assets/Level 2 Assets/Sky/sky_1.png");
-        this.load.image("bg_2_2", "Assets/Level 2 Assets/Sky/sky_2.png");
-        this.load.image("bg_2_3", "Assets/Level 2 Assets/Sky/sky_3.png");
-        this.load.image("bg_2_4", "Assets/Level 2 Assets/Sky/sky_4.png");
-        this.load.image("bg_2_5", "Assets/Level 2 Assets/Sky/sky_5.png");
-        this.load.image("bg_2_6", "Assets/Level 2 Assets/Sky/sky_6.png");
-        this.load.image("bg_2_7", "Assets/Level 2 Assets/Sky/sky_7.png");
+        this.load.image("bg_2_1", "Assets/Level 2/Sky/sky_1.png");
+        this.load.image("bg_2_2", "Assets/Level 2/Sky/sky_2.png");
+        this.load.image("bg_2_3", "Assets/Level 2/Sky/sky_3.png");
+        this.load.image("bg_2_4", "Assets/Level 2/Sky/sky_4.png");
+        this.load.image("bg_2_5", "Assets/Level 2/Sky/sky_5.png");
+        this.load.image("bg_2_6", "Assets/Level 2/Sky/sky_6.png");
+        this.load.image("bg_2_7", "Assets/Level 2/Sky/sky_7.png");
 
-        this.load.image("back_2l1", "Assets/Level 2 Assets/Background_Tree_1_L.png");
-        this.load.image("back_2r1", "Assets/Level 2 Assets/Background_Tree_1_R.png");
-        this.load.image("back_2l2", "Assets/Level 2 Assets/Background_Tree_2_L.png");
-        this.load.image("back_2r2", "Assets/Level 2 Assets/Background_Tree_2_R.png");
-        this.load.image("back_2l3", "Assets/Level 2 Assets/Background_Tree_3_L.png");
-        this.load.image("back_2r3", "Assets/Level 2 Assets/Background_Tree_3_R.png");
+        this.load.image("back_2l1", "Assets/Level 2/Background_Tree_1_L.png");
+        this.load.image("back_2r1", "Assets/Level 2/Background_Tree_1_R.png");
+        this.load.image("back_2l2", "Assets/Level 2/Background_Tree_2_L.png");
+        this.load.image("back_2r2", "Assets/Level 2/Background_Tree_2_R.png");
+        this.load.image("back_2l3", "Assets/Level 2/Background_Tree_3_L.png");
+        this.load.image("back_2r3", "Assets/Level 2/Background_Tree_3_R.png");
 
-        this.load.image("mid_2l1", "Assets/Level 2 Assets/Midground_Tree_1_L.png");
-        this.load.image("mid_2r1", "Assets/Level 2 Assets/Midground_Tree_1_R.png");
-        this.load.image("mid_2l2", "Assets/Level 2 Assets/Midground_Tree_2_L.png");
-        this.load.image("mid_2r2", "Assets/Level 2 Assets/Midground_Tree_2_R.png");
-        this.load.image("mid_2l3", "Assets/Level 2 Assets/Midground_Tree_3_L.png");
-        this.load.image("mid_2r3", "Assets/Level 2 Assets/Midground_Tree_3_R.png");
+        this.load.image("mid_2l1", "Assets/Level 2/Midground_Tree_1_L.png");
+        this.load.image("mid_2r1", "Assets/Level 2/Midground_Tree_1_R.png");
+        this.load.image("mid_2l2", "Assets/Level 2/Midground_Tree_2_L.png");
+        this.load.image("mid_2r2", "Assets/Level 2/Midground_Tree_2_R.png");
+        this.load.image("mid_2l3", "Assets/Level 2/Midground_Tree_3_L.png");
+        this.load.image("mid_2r3", "Assets/Level 2/Midground_Tree_3_R.png");
 
-        this.load.image("fore_2l1", "Assets/Level 2 Assets/Foreground_Building_1_L.png");
-        this.load.image("fore_2r1", "Assets/Level 2 Assets/Foreground_Building_1_R.png");
-        this.load.image("fore_2l2", "Assets/Level 2 Assets/Foreground_Building_2_L.png");
-        this.load.image("fore_2r2", "Assets/Level 2 Assets/Foreground_Building_2_R.png");
-        this.load.image("fore_2l3", "Assets/Level 2 Assets/Foreground_Building_3_L.png");
-        this.load.image("fore_2r3", "Assets/Level 2 Assets/Foreground_Building_3_R.png");
+        this.load.image("fore_2l1", "Assets/Level 2/Foreground_Building_1_L.png");
+        this.load.image("fore_2r1", "Assets/Level 2/Foreground_Building_1_R.png");
+        this.load.image("fore_2l2", "Assets/Level 2/Foreground_Building_2_L.png");
+        this.load.image("fore_2r2", "Assets/Level 2/Foreground_Building_2_R.png");
+        this.load.image("fore_2l3", "Assets/Level 2/Foreground_Building_3_L.png");
+        this.load.image("fore_2r3", "Assets/Level 2/Foreground_Building_3_R.png");
 
         this.load.image("overlay2", "Assets/UI Assets/Level_2_Overlay.png");
     }
@@ -265,20 +265,20 @@ class loadScene2 extends Phaser.Scene{
         this.load.image("whiteScreen", "Assets/white.png");
 
         //load crumbling platform
-        this.load.spritesheet("crumbling_break", "Assets/Branch Platforms/Crumbling Branch/Crumbling_Break_Sprite_Sheet.png",{
+        this.load.spritesheet("crumbling_break", "Assets/Branch Platforms/Crumbling_Branch/Crumbling_Break_Sprite_Sheet.png",{
             frameWidth: 1024,
             frameHeight: 589
         });
-        this.load.spritesheet("crumbling_respawn", "Assets/Branch Platforms/Crumbling Branch/Crumbling_Respawn_Sprite_Sheet.png",{
+        this.load.spritesheet("crumbling_respawn", "Assets/Branch Platforms/Crumbling_Branch/Crumbling_Respawn_Sprite_Sheet.png",{
             frameWidth: 1024,
             frameHeight: 589
         });
-        this.load.spritesheet("crumbling_shake", "Assets/Branch Platforms/Crumbling Branch/Crumbling_Shaking_Loop_Sprite_Sheet.png",{
+        this.load.spritesheet("crumbling_shake", "Assets/Branch Platforms/Crumbling_Branch/Crumbling_Shaking_Loop_Sprite_Sheet.png",{
             frameWidth: 1024,
             frameHeight: 589
         });
 
-        this.load.image("crumbling_platform", "Assets/Branch Platforms/Crumbling Branch/crumbling_Platform.png");
+        this.load.image("crumbling_platform", "Assets/Branch Platforms/Crumbling_Branch/crumbling_Platform.png");
 
         // level end
         this.load.image("levelEnd", "Assets/UI Assets/Level_End_UI.png");
