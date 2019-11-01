@@ -185,13 +185,13 @@ class loadScene2 extends Phaser.Scene{
 
     loadEnv(){
         // load environment assets
-        this.load.image("bg_2_1", "Assets/404FIX/sky_1.png");
-        this.load.image("bg_2_2", "Assets/404FIX/sky_2.png");
-        this.load.image("bg_2_3", "Assets/404FIX/sky_3.png");
-        this.load.image("bg_2_4", "Assets/404FIX/sky_4.png");
-        this.load.image("bg_2_5", "Assets/404FIX/sky_5.png");
-        this.load.image("bg_2_6", "Assets/404FIX/sky_6.png");
-        this.load.image("bg_2_7", "Assets/404FIX/sky_7.png");
+        this.load.image("bg_2_1", "Assets/Level 2/Sky/sky_1.png");
+        this.load.image("bg_2_2", "Assets/Level 2/Sky/sky_2.png");
+        this.load.image("bg_2_3", "Assets/Level 2/Sky/sky_3.png");
+        this.load.image("bg_2_4", "Assets/Level 2/Sky/sky_4.png");
+        this.load.image("bg_2_5", "Assets/Level 2/Sky/sky_5.png");
+        this.load.image("bg_2_6", "Assets/Level 2/Sky/sky_6.png");
+        this.load.image("bg_2_7", "Assets/Level 2/Sky/sky_7.png");
 
         this.load.image("back_2l1", "Assets/Level 2/Background_Tree_1_L.png");
         this.load.image("back_2r1", "Assets/Level 2/Background_Tree_1_R.png");
@@ -265,20 +265,20 @@ class loadScene2 extends Phaser.Scene{
         this.load.image("whiteScreen", "Assets/white.png");
 
         //load crumbling platform
-        this.load.spritesheet("crumbling_break", "Assets/404FIX/Crumbling_Branch/Crumbling_Break_Sprite_Sheet.png",{
+        this.load.spritesheet("crumbling_break", "Assets/Branch Platforms/Crumbling_Branch/Crumbling_Break_Sprite_Sheet.png",{
             frameWidth: 1024,
             frameHeight: 589
         });
-        this.load.spritesheet("crumbling_respawn", "Assets/404FIX/Crumbling_Branch/Crumbling_Respawn_Sprite_Sheet.png",{
+        this.load.spritesheet("crumbling_respawn", "Assets/Branch Platforms/Crumbling_Branch/Crumbling_Respawn_Sprite_Sheet.png",{
             frameWidth: 1024,
             frameHeight: 589
         });
-        this.load.spritesheet("crumbling_shake", "Assets/404FIX/Crumbling_Branch/Crumbling_Shaking_Loop_Sprite_Sheet.png",{
+        this.load.spritesheet("crumbling_shake", "Assets/Branch Platforms/Crumbling_Branch/Crumbling_Shaking_Loop_Sprite_Sheet.png",{
             frameWidth: 1024,
             frameHeight: 589
         });
 
-        this.load.image("crumbling_platform", "Assets/404FIX/Crumbling_Branch/crumbling_Platform.png");
+        this.load.image("crumbling_platform", "Assets/Branch Platforms/Crumbling_Branch/crumbling_Platform.png");
 
         // level end
         this.load.image("levelEnd", "Assets/UI Assets/Level_End_UI.png");
