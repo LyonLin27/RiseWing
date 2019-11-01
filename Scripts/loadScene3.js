@@ -349,7 +349,7 @@ class loadScene3 extends Phaser.Scene{
         this.load.audio("jumpSFX", "Assets/SFX/audio_jump_and_fly.wav");
         this.load.audio("landSFX", "Assets/SFX/audio_landing_on_platform.wav");
 
-        this.load.audio("bgm1", "Assets/Music/lv3.mp3");
+        this.load.audio("bgm3", "Assets/Music/lv3.mp3");
     }
 
 }
