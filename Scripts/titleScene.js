@@ -9,7 +9,7 @@ class titleScene extends Phaser.Scene{
         this.load.image("titleImg", "Assets/UI Assets/Title_icon.png");
         this.load.image("startImg", "Assets/Start.png");
         this.load.image("continueImg", "Assets/Continue.png");
-        this.load.image("testImg", "Assets/Test.png");
+        //this.load.image("testImg", "Assets/Test.png");
 
 
         this.load.spritesheet("tree_grow", "Assets/UI Assets/Branch_UI_Sprite_Sheet.png",{

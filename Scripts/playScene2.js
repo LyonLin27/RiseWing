@@ -361,36 +361,36 @@ class playScene2 extends Phaser.Scene{
         this.jumpUI.update(time, delta, this.player.remainJump, this.player.maxJump);
 
         // checkpoint cheat
-        // let num_key = this.input.keyboard.addKey("ZERO");
-        // if(num_key.isDown){
-        //     this.player.player.x = this.checkpointData.Checkpoints.lv2["1"]["x"];
-        //     this.player.player.y = this.normalize(this.checkpointData.Checkpoints.lv2["1"]["y"]);
-        // }
-        // num_key = this.input.keyboard.addKey("ONE");
-        // if(num_key.isDown){
-        //     this.player.player.x = this.checkpointData.Checkpoints.lv2["1"]["x"];
-        //     this.player.player.y = this.normalize(this.checkpointData.Checkpoints.lv2["1"]["y"]);
-        // }
-        // num_key = this.input.keyboard.addKey("TWO");
-        // if(num_key.isDown){
-        //     this.player.player.x = this.checkpointData.Checkpoints.lv2["2"]["x"];
-        //     this.player.player.y = this.normalize(this.checkpointData.Checkpoints.lv2["2"]["y"]);
-        // }
-        // num_key = this.input.keyboard.addKey("THREE");
-        // if(num_key.isDown){
-        //     this.player.player.x = this.checkpointData.Checkpoints.lv2["3"]["x"];
-        //     this.player.player.y = this.normalize(this.checkpointData.Checkpoints.lv2["3"]["y"]);
-        // }
-        // num_key = this.input.keyboard.addKey("FOUR");
-        // if(num_key.isDown){
-        //     this.player.player.x = this.checkpointData.Checkpoints.lv2["4"]["x"];
-        //     this.player.player.y = this.normalize(this.checkpointData.Checkpoints.lv2["4"]["y"]);
-        // }
-        // num_key = this.input.keyboard.addKey("FIVE");
-        // if(num_key.isDown){
-        //     this.player.player.x = this.checkpointData.Checkpoints.lv2["5"]["x"];
-        //     this.player.player.y = this.normalize(this.checkpointData.Checkpoints.lv2["5"]["y"]);
-        // }
+        let num_key = this.input.keyboard.addKey("ZERO");
+        if(num_key.isDown){
+            this.player.player.x = this.checkpointData.Checkpoints.lv2["1"]["x"];
+            this.player.player.y = this.normalize(this.checkpointData.Checkpoints.lv2["1"]["y"]);
+        }
+        num_key = this.input.keyboard.addKey("ONE");
+        if(num_key.isDown){
+            this.player.player.x = this.checkpointData.Checkpoints.lv2["1"]["x"];
+            this.player.player.y = this.normalize(this.checkpointData.Checkpoints.lv2["1"]["y"]);
+        }
+        num_key = this.input.keyboard.addKey("TWO");
+        if(num_key.isDown){
+            this.player.player.x = this.checkpointData.Checkpoints.lv2["2"]["x"];
+            this.player.player.y = this.normalize(this.checkpointData.Checkpoints.lv2["2"]["y"]);
+        }
+        num_key = this.input.keyboard.addKey("THREE");
+        if(num_key.isDown){
+            this.player.player.x = this.checkpointData.Checkpoints.lv2["3"]["x"];
+            this.player.player.y = this.normalize(this.checkpointData.Checkpoints.lv2["3"]["y"]);
+        }
+        num_key = this.input.keyboard.addKey("FOUR");
+        if(num_key.isDown){
+            this.player.player.x = this.checkpointData.Checkpoints.lv2["4"]["x"];
+            this.player.player.y = this.normalize(this.checkpointData.Checkpoints.lv2["4"]["y"]);
+        }
+        num_key = this.input.keyboard.addKey("FIVE");
+        if(num_key.isDown){
+            this.player.player.x = this.checkpointData.Checkpoints.lv2["5"]["x"];
+            this.player.player.y = this.normalize(this.checkpointData.Checkpoints.lv2["5"]["y"]);
+        }
     }
 
     HandleEvent(time, delta){
