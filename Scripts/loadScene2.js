@@ -8,7 +8,7 @@ class loadScene2 extends Phaser.Scene{
     preload(){
         this.whiteScreen = this.add.image(game.config.width*0.5,game.config.height*0.5, "loadingBG");
         this.add.text(game.config.width*0.2,game.config.height*0.9, "Now Loading...", {font:"60px MyBolton",fill: "#555555"});
-        this.add.text(game.config.width*0.05,game.config.height*0.95, "Gottfried von der Goltz,Antonio Vivaldi \nThe Four Seasons： Violin Concerto No. 4 in F Minor, RV 297, ＂Winter＂： II. Largo", {font:"30px MyBolton",fill: "#555555"});
+        this.add.text(game.config.width*0.05,game.config.height*0.95, "Antonio Vivaldi \nThe Four Seasons： Violin Concerto No. 4 in F Minor, RV 297, ＂Winter＂： II. Largo", {font:"30px MyBolton",fill: "#555555"});
 
         this.loadPlayer();
         this.loadEnv();

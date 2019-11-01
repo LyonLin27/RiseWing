@@ -8,7 +8,7 @@ class loadScene3 extends Phaser.Scene{
     preload(){
         this.whiteScreen = this.add.image(game.config.width*0.5,game.config.height*0.5, "loadingBG");
         this.add.text(game.config.width*0.2,game.config.height*0.9, "Now Loading...", {font:"60px MyBolton",fill: "#555555"});
-        this.add.text(game.config.width*0.05,game.config.height*0.95, "Pyotr Ilyich Tchaikovsky,Borodin Quartet,Yuri Yurov \nString Quartet No 1 in D Major, Op 11：II Andante cantabile", {font:"30px MyBolton",fill: "#555555"});
+        this.add.text(game.config.width*0.05,game.config.height*0.95, "Pyotr Ilyich Tchaikovsky, \nString Quartet No 1 in D Major, Op 11：II Andante cantabile", {font:"30px MyBolton",fill: "#555555"});
 
         this.loadPlayer();
         this.loadEnv();

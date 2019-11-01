@@ -8,7 +8,7 @@ class loadScene1 extends Phaser.Scene{
     preload(){
         this.whiteScreen = this.add.image(game.config.width*0.5,game.config.height*0.5, "loadingBG");
         this.add.text(game.config.width*0.2,game.config.height*0.9, "Now Loading...", {font:"60px MyBolton",fill: "#555555"});
-        this.add.text(game.config.width*0.05,game.config.height*0.95, "La Concordanza,Irene De Ruvo \nConcerto grosso No. 9 in C Minor ＂Victoria Maesta＂： III. Grave", {font:"30px MyBolton",fill: "#555555"});
+        this.add.text(game.config.width*0.05,game.config.height*0.95, "Arcangelo Corelli \nConcerto grosso No. 9 in C Minor ＂Victoria Maesta＂： III. Grave", {font:"30px MyBolton",fill: "#555555"});
 
 
         this.loadPlayer();
