@@ -278,7 +278,7 @@ class loadScene2 extends Phaser.Scene{
             frameHeight: 589
         });
 
-        this.load.image("crumbling_platform", "Assets/Branch Platforms/Crumbling_Branch/crumbling_Platform.png");
+        this.load.image("crumbling_platform", "Assets/Branch Platforms/Crumbling_Branch/CrumblingPlatform.png");
 
         // level end
         this.load.image("levelEnd", "Assets/UI Assets/Level_End_UI.png");
