@@ -6,15 +6,39 @@ class Crumbling extends Platform{
         this.imgName = imgName;
         this.platform.timeTillBreak = timeTillBreak;
         this.platform.timeTillRespawn = timeTillRespawn;
+        this.platform.tarAlpha = 1;
         this.acc = 0.1;
         this.breaking = false;
         this.platform.type = "crumbling";
         this.platform.breaking = false;
+
+        this.platform.onColl = function(platform, player){
+            if(player.isPlayer){
+                if(!platform.breaking && platform.body.position.y > player.body.position.y){
+                    platform.breaking = true;
+                    platform.play("shaking");
+                    setTimeout(() => {
+                        //remove platform, do animation
+                        //platform.disableBody(true, false);
+                        platform.body.enable = false;
+                        platform.play("breaking");
+                        setTimeout(() => {
+                            platform.play("respawning");
+                            platform.enableBody(true, platform.x, platform.y, true, true);
+                            platform.breaking = false;
+                        }, platform.timeTillRespawn); // platform respawn time
+                    }, platform.timeTillBreak);
+                }
+            }
+        }
+
         this.create();
     }
 
     update(time, delta){
-        //nothing in the base Crumbling
+        // if(tarAlpha > this.platform.alpha){
+        //     this.platform.alpha
+        // }
     }
 
     create(){

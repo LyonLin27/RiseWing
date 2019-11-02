@@ -13,12 +13,12 @@ class titleScene extends Phaser.Scene{
 
 
         this.load.spritesheet("tree_grow", "Assets/UI Assets/Branch_UI_Sprite_Sheet.png",{
-            frameWidth: 1024,
-            frameHeight: 1024
+            frameWidth: 512,
+            frameHeight: 512
         });
         this.load.spritesheet("tree_start", "Assets/UI Assets/Branch_UI_First.png",{
-            frameWidth: 1024,
-            frameHeight: 1024
+            frameWidth: 512,
+            frameHeight: 512
         });
 
         // load white / black screen
@@ -55,7 +55,7 @@ class titleScene extends Phaser.Scene{
         this.whiteAlphaTar = 0;
 
         this.hoverSprite = this.add.sprite(0,0,"tree_start");
-        this.hoverSprite.scale = 0.2;
+        this.hoverSprite.scale = 0.4;
         //this.hoverSprite.x = game.config.width*0.25;
         this.hoverSprite.setOrigin(0.5, 0.7);
         this.hoverSprite.setVisible(false);

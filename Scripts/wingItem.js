@@ -13,10 +13,10 @@ class WingItem extends Phaser.GameObjects.Sprite {
     }
 
     create(){
-        this.item.body.setSize(500,500);
-        this.item.scale = 0.2;
-        this.item.body.offset.x = 300;
-        this.item.body.offset.y = 300;
+        this.item.body.setSize(this.item.width*0.5,this.item.height*0.6);
+        this.item.scale = 0.8;
+        // this.item.body.offset.x = 300;
+        // this.item.body.offset.y = 300;
         this.item.body.gravity.set(0, -200);
         this.item.play("wingItemLoop");
 

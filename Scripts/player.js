@@ -6,6 +6,7 @@ class Player extends Phaser.GameObjects.Sprite {
 
         super(scene, x, y, imageName);
         this.player = this.scene.physics.add.sprite(x, y, "player");
+        this.player.isPlayer = true;
         this.player.onGround = false;
 
         this.capSpdYUp = 800;         // cap vertical spd, used for positive and negative
@@ -29,28 +30,7 @@ class Player extends Phaser.GameObjects.Sprite {
 
         this.player.dead = false;
         this.player.controllable = true;
-
-        this.player.onColl = function(player, platform){
-            switch(platform.type){
-                case "crumbling":
-                    if(!platform.breaking && platform.body.position.y > player.body.position.y){
-                        platform.breaking = true;
-                        platform.play("shaking");
-                        setTimeout(() => {
-                            //remove platform, do animation
-                            //platform.disableBody(true, false);
-                            platform.body.enable = false;
-                            platform.play("breaking");
-                            setTimeout(() => {
-                                platform.play("respawning");
-                                platform.enableBody(true, platform.x, platform.y, true, true);
-                                platform.breaking = false;
-                            }, platform.timeTillRespawn); // platform respawn time
-                        }, platform.timeTillBreak);
-                    }
-                break;
-            }
-        }
+        
         this.create();
     }
 
@@ -266,7 +246,9 @@ class Player extends Phaser.GameObjects.Sprite {
             player.body.velocity.y = platform.body.velocity.y;
             player.onGround = true;
         }
-        player.onColl(player, platform);
+        if(platform.type == "crumbling"){
+            platform.onColl(platform, player);
+        }
     }
 
     // onCollision(player, platform){

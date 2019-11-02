@@ -239,22 +239,22 @@ class loadScene2 extends Phaser.Scene{
 
         // load checkpoint
         this.load.spritesheet("checkpoint_grow", "Assets/UI Assets/Branch_UI_Sprite_Sheet.png",{
-            frameWidth: 1024,
-            frameHeight: 1024
+            frameWidth: 512,
+            frameHeight: 512
         });
         this.load.spritesheet("checkpoint_end", "Assets/UI Assets/Branch_UI_Final.png",{
-            frameWidth: 1024,
-            frameHeight: 1024
+            frameWidth: 512,
+            frameHeight: 512
         });
         this.load.spritesheet("checkpoint_start", "Assets/UI Assets/Branch_UI_First.png",{
-            frameWidth: 1024,
-            frameHeight: 1024
+            frameWidth: 512,
+            frameHeight: 512
         });
 
         // load wing item
         this.load.spritesheet("wingItem", "Assets/UI Assets/Wing_Pickup_UI_Sprite_Sheet.png",{
-            frameWidth: 1024,
-            frameHeight: 1024
+            frameWidth: 256,
+            frameHeight: 256
         });
 
 
