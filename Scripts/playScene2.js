@@ -5,7 +5,7 @@ class playScene2 extends Phaser.Scene{
     }
 
     create(){
-        this.physics.world.setBounds(0, 0, game.config.width, game.config.height * 12.4);
+        this.physics.world.setBounds(0, 0, game.config.width, 2436 * 12.4);
 
         this.npcDialogData = this.cache.json.get('dialogData');
         // create animations

@@ -7,7 +7,7 @@ class playScene1 extends Phaser.Scene{
     }
 
     create(){
-        this.physics.world.setBounds(0, 0, game.config.width, game.config.height * 7.04);
+        this.physics.world.setBounds(0, 0, game.config.width, 2436 * 7.04);
 
         // create animations
         this.anims.create({

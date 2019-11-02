@@ -125,13 +125,8 @@ class titleScene extends Phaser.Scene{
         //     this.time.delayedCall(1000, ()=>{ this.scene.start("ending_good")}, []);
         // })
 
-        let num_key = this.input.keyboard.addKey("ZERO");
-        if(num_key.isDown){
-            console.log("test mode on");
-            localStorage.setItem("test_mode", "1");
-        }
     }
-
+    
     update(time, delta){
         // update white/black screen overlay
         if(this.whiteAlphaTar == 1){
@@ -157,6 +152,12 @@ class titleScene extends Phaser.Scene{
             if(this.blackScreen.alpha <= 0){
                 this.blackScreen.alpha = 0;
             }
+        }
+        
+        let num_key = this.input.keyboard.addKey("ZERO");
+        if(num_key.isDown){
+            console.log("test mode on");
+            localStorage.setItem("test_mode", "1");
         }
     }
 }
