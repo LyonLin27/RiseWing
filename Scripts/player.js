@@ -21,7 +21,7 @@ class Player extends Phaser.GameObjects.Sprite {
         this.clickTimer = 0;
 
         this.scene = scene;
-        this.mouse = this.scene.input.mousePointer;
+        this.mouse = this.scene.input.activePointer;
         this.mouseDownPrev = false;
         this.chargeTime=0;
         this.inAir = true;
@@ -104,13 +104,19 @@ class Player extends Phaser.GameObjects.Sprite {
 
     update(time, delta){
 
+        //if(this.mouse.wasTouch){
+
         // just to save some "this..."
-        let ok2release = this.mouseDownPrev;
         let player = this.player;
         player.maxJump = this.maxJump;
         // player input signal
-        let movRight = this.mouse.x > this.player.x;
+        let pointerDown = this.mouse.isDown;
+        let movRight = this.mouse.x > player.x;
+        if(this.mouse.wasTouch){
+            movRight = this.mouse.x > game.config.width/2;
+        }
         let release = !this.mouse.isDown;
+        let ok2release = this.mouseDownPrev;
 
         let animKey = "";
         let animWingCount = this.maxJump-1;
@@ -184,7 +190,7 @@ class Player extends Phaser.GameObjects.Sprite {
                 }
 
                 // when mouse down, charge
-                if(this.mouse.isDown){
+                if(pointerDown){
                     if(!this.player.anims.currentAnim.key.includes("p_chargeL")){
                         if(player.body.blocked.down || player.body.touching.down){
                             animKey = "p_chargeS";
@@ -226,7 +232,7 @@ class Player extends Phaser.GameObjects.Sprite {
         }
 
 
-        this.mouseDownPrev = this.mouse.isDown;
+        this.mouseDownPrev = pointerDown;
 
         // update anim
         if(player.anims.currentAnim.key != animKey+animWingCount){
