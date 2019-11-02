@@ -6,6 +6,7 @@ class Crumbling extends Platform{
         this.imgName = imgName;
         this.platform.timeTillBreak = timeTillBreak;
         this.platform.timeTillRespawn = timeTillRespawn;
+        this.platform.alphaTime = 750;
         this.platform.tarAlpha = 1;
         this.acc = 0.1;
         this.breaking = false;
@@ -23,7 +24,11 @@ class Crumbling extends Platform{
                         platform.body.enable = false;
                         platform.play("breaking");
                         setTimeout(() => {
-                            platform.play("respawning");
+                            platform.tarAlpha = 0;
+                            setTimeout(()=>{
+                                platform.play("respawning");
+                                platform.tarAlpha = 1;
+                            }, platform.alphaTime);
                             platform.enableBody(true, platform.x, platform.y, true, true);
                             platform.breaking = false;
                         }, platform.timeTillRespawn); // platform respawn time
@@ -36,9 +41,18 @@ class Crumbling extends Platform{
     }
 
     update(time, delta){
-        // if(tarAlpha > this.platform.alpha){
-        //     this.platform.alpha
-        // }
+        if(this.platform.tarAlpha == 1){
+            this.platform.alpha += delta/500;
+            if(this.platform.alpha > this.platform.tarAlpha){
+                this.platform.alpha = 1;
+            }
+        }
+        if(this.platform.tarAlpha == 0){
+            this.platform.alpha -= delta/500;
+            if(this.platform.alpha < this.platform.tarAlpha){
+                this.platform.alpha = 0;
+            }
+        }
     }
 
     create(){

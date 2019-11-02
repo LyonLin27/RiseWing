@@ -277,7 +277,7 @@ class loadScene3 extends Phaser.Scene{
             frameWidth: 1024,
             frameHeight: 589
         });
-        this.load.spritesheet("crumbling_respawn", "Assets/Branch Platforms/Crumbling_Branch/Crumbling_Respawn_Sprite_Sheet.png",{
+        this.load.spritesheet("crumbling_respawn", "Assets/Branch Platforms/Crumbling_Branch/CrumblingPlatform.png",{
             frameWidth: 1024,
             frameHeight: 589
         });
