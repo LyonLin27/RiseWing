@@ -6,10 +6,14 @@ class endingBad extends Phaser.Scene{
     }
 
     preload(){
-        this.load.spritesheet("sheetBE", "Assets/Endings/Bad Ending/Bad_Ending_Sprite_Sheet.png",{
-            frameWidth: 1024,
-            frameHeight: 2048
-        });
+
+        this.load.image("BE1", "Assets/Endings/Good Ending/g1.png");
+        this.load.image("BE2", "Assets/Endings/Good Ending/g2.png");
+        this.load.image("BE3", "Assets/Endings/Good Ending/g3.png");
+        this.load.image("BE4", "Assets/Endings/Bad Ending/b4.png");
+        this.load.image("BE5", "Assets/Endings/Good Ending/g4.png");
+        this.load.image("BE6", "Assets/Endings/Bad Ending/b5.png");
+        this.load.image("BE7", "Assets/Endings/Bad Ending/b6.png");
 
         this.load.image("imageBE", "Assets/Endings/Bad Ending/ending 1 cutscene.png");
 
@@ -20,14 +24,7 @@ class endingBad extends Phaser.Scene{
     }
 
     create(){
-        // create animations
-        this.anims.create({
-            key: "anim_BE",
-            frames: this.anims.generateFrameNumbers("sheetBE"),
-            frameRate: 0.3,
-            repeat: 0
-        });
-
+        
         this.blackBG = this.add.image(game.config.width*0.5,game.config.height*0.5, "titleBG");
         this.blackBG.scale  = 1;
         this.blackBG.alpha = 1;
@@ -37,20 +34,28 @@ class endingBad extends Phaser.Scene{
         this.whiteScreen.scale  = 1;
         this.whiteScreen.alpha = 1;
         this.whiteAlphaTar = 0;
-
-        this.animBE = this.add.sprite(0,0, "anim_BE");
-        this.animBE.setOrigin(0,0);
-        this.animBE.scale = 1.2;
-        this.animBE.play("anim_BE");
+        
+        this.animArr = new Array();
+        for(let i = 7; i>0; i--){
+            let imgName = "BE"+i;
+            let img = this.add.image(0, 0, imgName);
+            img.setOrigin(0,0);
+            img.scale = 1.2;
+            this.animArr.push(img);
+        }
+        this.countdownMax = 4;
+        this.countdown = 9999;
+        this.lastImg = null;
 
         this.showCG = false;
         this.endCG = this.add.image(game.config.width*0.5,game.config.height*0.5, "imageBE");
         this.endCG.alpha = 0;
 
-        this.time.delayedCall(1000, ()=>{this.whiteAlphaTar = 0}, []);
+        this.time.delayedCall(1000, ()=>{
+            this.whiteAlphaTar = 0;
+        }, []);
         this.time.delayedCall(1500, ()=>{
-            this.animBE.play("anim_BE");
-            this.animBE.on('animationcomplete', BEAnimEnd, this);
+            this.countdown = this.countdownMax;
         }, []);
     }
 
@@ -81,8 +86,14 @@ class endingBad extends Phaser.Scene{
             }
         }
 
+        if(this.lastImg != null){
+            if(this.lastImg.alpha >=0){
+                this.lastImg.alpha -= delta/500;
+            }
+        }
+        
         if(this.showCG){
-            this.endCG.alpha += delta/800;
+            this.endCG.alpha += delta/1200;
             if(this.endCG.alpha >= 1){
                 this.endCG.alpha = 1;
                 this.showCG = false;
@@ -90,11 +101,18 @@ class endingBad extends Phaser.Scene{
                 this.time.delayedCall(8000, ()=>{ this.scene.start("title")}, []);
             }
         }
-    }
-}
 
-function BEAnimEnd (animation, frame)
-{
-    this.showCG = true;
+        if(this.animArr.length <= 0 && this.endCG.alpha == 0){
+            this.showCG = true;
+        }
+        if(this.animArr.length <= 0){
+            return;
+        }else if (this.countdown < 0){
+            this.lastImg = this.animArr.pop();
+            this.countdown = this.countdownMax;
+        }else{
+            this.countdown -= delta/1000;
+        }
+    }
 }
 

@@ -6,10 +6,12 @@ class endingGood extends Phaser.Scene{
     }
 
     preload(){
-        this.load.spritesheet("sheetGE", "Assets/Endings/Good Ending/Good_Ending_Sprite_Sheet.png",{
-            frameWidth: 1024,
-            frameHeight: 2048
-        });
+        this.load.image("GE1", "Assets/Endings/Good Ending/g1.png");
+        this.load.image("GE2", "Assets/Endings/Good Ending/g2.png");
+        this.load.image("GE3", "Assets/Endings/Good Ending/g3.png");
+        this.load.image("GE4", "Assets/Endings/Good Ending/g4.png");
+        this.load.image("GE5", "Assets/Endings/Good Ending/g5.png");
+        this.load.image("GE6", "Assets/Endings/Good Ending/g6.png");
 
         this.load.image("imageGE", "Assets/Endings/Good Ending/ending 2 cutscene.png");
 
@@ -20,13 +22,6 @@ class endingGood extends Phaser.Scene{
     }
 
     create(){
-        // create animations
-        this.anims.create({
-            key: "anim_GE",
-            frames: this.anims.generateFrameNumbers("sheetGE"),
-            frameRate: 0.3,
-            repeat: 0
-        });
 
         this.blackBG = this.add.image(game.config.width*0.5,game.config.height*0.5, "titleBG");
         this.blackBG.scale  = 1;
@@ -38,19 +33,27 @@ class endingGood extends Phaser.Scene{
         this.whiteScreen.alpha = 1;
         this.whiteAlphaTar = 0;
 
-        this.animBE = this.add.sprite(0,0, "anim_GE");
-        this.animBE.setOrigin(0,0);
-        this.animBE.scale = 1.2;
-        this.animBE.play("anim_GE");
+        this.animArr = new Array();
+        for(let i = 6; i>0; i--){
+            let imgName = "GE"+i;
+            let img = this.add.image(0, 0, imgName);
+            img.setOrigin(0,0);
+            img.scale = 1.2;
+            this.animArr.push(img);
+        }
+        this.countdownMax = 4;
+        this.countdown = 9999;
+        this.lastImg = null;
 
         this.showCG = false;
         this.endCG = this.add.image(game.config.width*0.5,game.config.height*0.5, "imageGE");
         this.endCG.alpha = 0;
 
-        this.time.delayedCall(1000, ()=>{this.whiteAlphaTar = 0}, []);
+        this.time.delayedCall(1000, ()=>{
+            this.whiteAlphaTar = 0;
+        }, []);
         this.time.delayedCall(1500, ()=>{
-            this.animBE.play("anim_GE");
-            this.animBE.on('animationcomplete', GEAnimEnd, this);
+            this.countdown = this.countdownMax;
         }, []);
     }
 
@@ -81,8 +84,14 @@ class endingGood extends Phaser.Scene{
             }
         }
 
+        if(this.lastImg != null){
+            if(this.lastImg.alpha >=0){
+                this.lastImg.alpha -= delta/500;
+            }
+        }
+
         if(this.showCG){
-            this.endCG.alpha += delta/800;
+            this.endCG.alpha += delta/1200;
             if(this.endCG.alpha >= 1){
                 this.endCG.alpha = 1;
                 this.showCG = false;
@@ -90,11 +99,18 @@ class endingGood extends Phaser.Scene{
                 this.time.delayedCall(8000, ()=>{ this.scene.start("title")}, []);
             }
         }
-    }
-}
 
-function GEAnimEnd (animation, frame)
-{
-    this.showCG = true;
+        if(this.animArr.length <= 0 && this.endCG.alpha == 0){
+            this.showCG = true;
+        }
+        if(this.animArr.length <= 0){
+            return;
+        }else if (this.countdown < 0){
+            this.lastImg = this.animArr.pop();
+            this.countdown = this.countdownMax;
+        }else{
+            this.countdown -= delta/1000;
+        }
+    }
 }
 
