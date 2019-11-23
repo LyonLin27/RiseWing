@@ -43,18 +43,22 @@ class playScene3 extends Phaser.Scene{
         this.blackAlphaTar = 0;
 
         //load in background
-        let bg = this.add.image(game.config.width*0.5,(this.physics.world.bounds.bottom-20000)/3*1.1,"bg_3_1");
+        let bg = this.add.image(game.config.width*0.5,this.physics.world.bounds.bottom*0.2+3000,"bg_3_1");
         bg.setOrigin(0.5,1);
         bg.scale = 1;
-        bg.setScrollFactor(0.05);
-        bg = this.add.image(game.config.width*0.5,(this.physics.world.bounds.bottom-26000)/3*1.1,"bg_3_2");
+        bg.setScrollFactor(0.2);
+        bg = this.add.image(game.config.width*0.5,this.physics.world.bounds.bottom*0.2,"bg_3_2");
         bg.setOrigin(0.5,1);
         bg.scale = 1;
-        bg.setScrollFactor(0.05);
-        bg = this.add.image(game.config.width*0.5,(this.physics.world.bounds.bottom-34000)/3*1.1,"bg_3_3");
+        bg.setScrollFactor(0.2);
+        bg = this.add.image(game.config.width*0.5,this.physics.world.bounds.bottom*0.2-3000,"bg_3_3");
         bg.setOrigin(0.5,1);
         bg.scale = 1;
-        bg.setScrollFactor(0.05);
+        bg.setScrollFactor(0.2);
+        bg = this.add.image(game.config.width*0.5,this.physics.world.bounds.bottom*0.2-3000-1707,"bg_3_4");
+        bg.setOrigin(0.5,1);
+        bg.scale = 1;
+        bg.setScrollFactor(0.2);
 
         let scrollFac = 0.3;
         let bg_scale = 0.6;
@@ -142,7 +146,7 @@ class playScene3 extends Phaser.Scene{
             asset.setScrollFactor(scrollFac);
         }
 
-        let overlay = this.add.image(game.config.width*0.5,this.physics.world.bounds.bottom*0.5,"overlay3");
+        let overlay = this.add.image(game.config.width*0.5,game.config.height*0.5,"overlay3");
         overlay.setScrollFactor(0);
 
         //end Background

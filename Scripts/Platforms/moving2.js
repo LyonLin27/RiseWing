@@ -21,8 +21,8 @@ class Moving2 extends Platform{
     }
 
     create(){
-        this.platform.body.setSize(this.platform.body.width-70,70);
-        this.platform.body.offset.y = 0;
-        this.platform.body.offset.x = 15;
+        this.platform.body.setSize(this.platform.body.width-90,70);
+        this.platform.body.offset.y = 4;
+        this.platform.body.offset.x = 20;
     }
 }

@@ -143,7 +143,7 @@ class playScene1 extends Phaser.Scene{
             asset.setScrollFactor(scrollFac);
         }
 
-        let overlay = this.add.image(game.config.width*0.5,this.physics.world.bounds.bottom*0.5,"overlay1");
+        let overlay = this.add.image(game.config.width*0.5,game.config.height*0.5,"overlay1");
         overlay.setScrollFactor(0);
 
 

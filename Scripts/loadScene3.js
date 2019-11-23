@@ -190,6 +190,9 @@ class loadScene3 extends Phaser.Scene{
         this.load.image("bg_3_1", "Assets/Level 3/Sky/Sky_1.png");
         this.load.image("bg_3_2", "Assets/Level 3/Sky/Sky_2.png");
         this.load.image("bg_3_3", "Assets/Level 3/Sky/Sky_3.png");
+        this.load.image("bg_3_4", "Assets/Level 3/Dark Area/BG_1.png");
+        this.load.image("bg_3_5", "Assets/Level 3/Dark Area/BG_2.png");
+        this.load.image("bg_3_6", "Assets/Level 3/Dark Area/BG_3.png");
 
         this.load.image("back_3l1", "Assets/Level 3/Background_1_L.png");
         this.load.image("back_3r1", "Assets/Level 3/Background_1_R.png");
