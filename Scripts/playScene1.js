@@ -409,8 +409,8 @@ class playScene1 extends Phaser.Scene{
         plats.push(new Left1(this, 300, this.normalize(600)));
 
         plats.push(new Center2(this, 600, this.normalize(1000)));
-        plats.push(new Center2(this, 800, this.normalize(1200)));
-        plats.push(new Center2(this, 1000, this.normalize(1400)));
+        plats.push(new Center2(this, 800, this.normalize(1250)));
+        plats.push(new Center2(this, 1000, this.normalize(1500)));
 
         plats.push(new Left2(this, 300, this.normalize(1800)));
 
