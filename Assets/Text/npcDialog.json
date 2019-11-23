@@ -54,7 +54,8 @@
                 "2": "\"Please stop smiling at me like that...\"",
                 "3": "\"What did you do...?\"",
                 "4": "\"...Oh, no...\"",
-                "5": "\"That can't be healthy...!\""
+                "5": "\"That can't be healthy...!\"",
+                "6": "\"You... made it up here too?\""
             },
             "text":{
                 "1": "The moth's eyes widen in shock.",
@@ -70,7 +71,8 @@
                 "2": "\"\"",
                 "3": "\"\"",
                 "4": "\"\"",
-                "5": "\"\""
+                "5": "\"\"",
+                "6": "\"You... made it up here too?\""
             },
             "text":{
                 "1": "The moth scurries away in a panic.",

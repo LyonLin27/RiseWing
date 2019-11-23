@@ -55,8 +55,12 @@ class playScene3 extends Phaser.Scene{
         bg.setOrigin(0.5,1);
         bg.scale = 1;
         bg.setScrollFactor(0.2);
-        bg = this.add.image(game.config.width*0.5,this.physics.world.bounds.bottom*0.2-3000-1707,"bg_3_4");
+        bg = this.add.image(game.config.width*0.5,this.physics.world.bounds.bottom*0.2-3000-900,"bg_3_moon");
         bg.setOrigin(0.5,1);
+        bg.scale = 1;
+        bg.setScrollFactor(0.2);
+        bg = this.add.image(game.config.width*0.5,this.physics.world.bounds.bottom*0.2-3000-880,"bg_3_boarder");
+        bg.setOrigin(0.5,0.5);
         bg.scale = 1;
         bg.setScrollFactor(0.2);
 
@@ -65,7 +69,7 @@ class playScene3 extends Phaser.Scene{
         let assetNamePrefix = "back_3l";
         let fullWid = game.config.width;
         let magicNum = 1/3*(1+scrollFac*2);
-        for(let h = 0; h < this.physics.world.bounds.bottom; h += 1700){
+        for(let h = 0; h < (this.physics.world.bounds.bottom-1000)*0.3; h += 1700){
             let randInt = Math.floor(Math.random()*6)+1; // 1~6
             let deltaHeight = randInt * 300;
             let assetName = assetNamePrefix + (randInt%2+1);
@@ -78,7 +82,7 @@ class playScene3 extends Phaser.Scene{
         }
 
         assetNamePrefix = "back_3r";
-        for(let h = 0; h < this.physics.world.bounds.bottom; h += 1700){
+        for(let h = 0; h < (this.physics.world.bounds.bottom-1000)*0.3; h += 1700){
             let randInt = Math.floor(Math.random()*6)+1; // 1~6
             let deltaHeight = randInt * 300;
             let assetName = assetNamePrefix + (randInt%2+1);
@@ -93,7 +97,7 @@ class playScene3 extends Phaser.Scene{
         scrollFac = 0.5;
         assetNamePrefix = "mid_3l";
         magicNum = 1/3*(1+scrollFac*2);
-        for(let h = 0; h < this.physics.world.bounds.bottom; h += 1250){
+        for(let h = 0; h < (this.physics.world.bounds.bottom-2000)*0.5; h += 1250){
             let randInt = Math.floor(Math.random()*6)+1; // 1~6
             let deltaHeight = randInt * 100;
             let assetName = assetNamePrefix + (randInt%3+1);
@@ -106,7 +110,7 @@ class playScene3 extends Phaser.Scene{
         }
 
         assetNamePrefix = "mid_3r";
-        for(let h = 0; h < this.physics.world.bounds.bottom; h += 1250){
+        for(let h = 0; h < (this.physics.world.bounds.bottom-2000)*0.5; h += 1250){
             let randInt = Math.floor(Math.random()*6)+1; // 1~6
             let deltaHeight = randInt * 100;
             let assetName = assetNamePrefix + (randInt%3+1);
@@ -121,7 +125,7 @@ class playScene3 extends Phaser.Scene{
         scrollFac = 1.0;
         assetNamePrefix = "fore_3l";
         magicNum = 1/3*(1+scrollFac*2);
-        for(let h = 0; h < this.physics.world.bounds.bottom; h += 1050){
+        for(let h = 0; h < this.physics.world.bounds.bottom-6000; h += 1050){
             let randInt = Math.floor(Math.random()*6)+1; // 1~6
             let deltaHeight = randInt * 500;
             let assetName = assetNamePrefix + (randInt%3+1);
@@ -134,7 +138,7 @@ class playScene3 extends Phaser.Scene{
         }
 
         assetNamePrefix = "fore_3r";
-        for(let h = -3000; h < this.physics.world.bounds.bottom; h += 1050){
+        for(let h = -3000; h < this.physics.world.bounds.bottom-6000; h += 1050){
             let randInt = Math.floor(Math.random()*6)+1; // 1~6
             let deltaHeight = randInt * 500;
             let assetName = assetNamePrefix + (randInt%3+1);
@@ -231,8 +235,8 @@ class playScene3 extends Phaser.Scene{
         //end add checkpoints
 
         // levelend
-        this.end = new LevelEnd(this, game.config.width*0.5, 0);
-        this.physics.add.overlap(this.player.getBody(), this.end.levelEnd, this.AdvanceLevel);
+        //this.end = new LevelEnd(this, game.config.width*0.5, 0);
+        this.physics.add.overlap(this.player.getBody(), this.end.npc, this.AdvanceLevel);
 
         // level begin
         this.time.delayedCall(1000, ()=>{this.whiteAlphaTar = 0}, []);
@@ -305,19 +309,19 @@ class playScene3 extends Phaser.Scene{
        }
        end.triggered=true;
        player.scene.whiteAlphaTar = 0;
-       player.body.setImmovable(true);
-       player.body.setAllowGravity(false);
+       //player.body.setImmovable(true);
+       //player.body.setAllowGravity(false);
        player.scene.checkpointData.CurrentCheckpoint = 1;
        // localStorage.setItem("save_checkpoint", 1);
        // localStorage.setItem("save_level", 1);
        // localStorage.setItem("collected_wings", 0);
        if(localStorage.getItem("collected_wings") == "1"){
-            player.scene.time.delayedCall(1000, ()=>{
+            player.scene.time.delayedCall(3000, ()=>{
                 player.scene.music.stop();
                 player.scene.scene.start("ending_bad");
             }, []);
        }else{
-            player.scene.time.delayedCall(1000, ()=>{
+            player.scene.time.delayedCall(3000, ()=>{
                 player.scene.music.stop();
                 player.scene.scene.start("ending_good");
             }, []);
@@ -408,7 +412,7 @@ class playScene3 extends Phaser.Scene{
             num_key = this.input.keyboard.addKey("FIVE");
             if(num_key.isDown){
                 this.player.player.x = 550;
-                this.player.player.y = 500;
+                this.player.player.y = 1000;
             }
         }
     }
@@ -598,7 +602,7 @@ class playScene3 extends Phaser.Scene{
         plats.push(new Left1(this, 100, this.normalize(29400)));
         plats.push(new Right1(this, 1000, this.normalize(29800)));
 
-        plats.push(new Center6(this, 550, this.normalize(30500)));
+        plats.push(new Center6(this, 620, this.normalize(30700)));
 
         new NPC(this, 900, this.normalize(1836), "npc_butterfly3", this.npcGroup, this.npcDialogData, 4, true, 0.5);
         new NPC(this, 760, this.normalize(1435), "npc_moth2", this.npcGroup, this.npcDialogData, 2, true, 0.4);
@@ -607,6 +611,7 @@ class playScene3 extends Phaser.Scene{
         new NPC(this, 1100, this.normalize(750), "npc_moth3", this.npcGroup, this.npcDialogData, 3, true, 0.4, 0.6);
         new NPC(this, 1000, this.normalize(250), "npc_moth1", this.npcGroup, this.npcDialogData, 1, true, 1, 0.4);
 
+        this.end = new NPC(this, 450, this.normalize(31000), "npc_moth3", this.npcGroup, this.npcDialogData, 6, false, 2, 0.6);
 
         //add all platforms from array to group after
         for(let i = 0; i < plats.length; i+= 1){
