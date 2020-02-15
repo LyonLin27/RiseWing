@@ -505,7 +505,7 @@ class playScene2 extends Phaser.Scene{
         new SpiderWeb(this, 150, this.normalize(15800), webGroup, 1.2, 1.2);
         new SpiderWeb(this, 120, this.normalize(15950), webGroup, 0.6, 0.6);
 
-        plats.push(new MovingV(this, 550, this.normalize(16200), "center1", 100, 1000, 1));
+        plats.push(new MovingV(this, 550, this.normalize(16200), "center1", 200, 1000, 1));
         new SpiderWeb(this, 550, this.normalize(16600), webGroup);
 
         plats.push(new Crumbling(this, 200, this.normalize(18000)));

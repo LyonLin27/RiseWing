@@ -125,7 +125,7 @@ class playScene3 extends Phaser.Scene{
         scrollFac = 1.0;
         assetNamePrefix = "fore_3l";
         magicNum = 1/3*(1+scrollFac*2);
-        for(let h = 0; h < this.physics.world.bounds.bottom-6000; h += 1050){
+        for(let h = 0; h < this.physics.world.bounds.bottom-7000; h += 1050){
             let randInt = Math.floor(Math.random()*6)+1; // 1~6
             let deltaHeight = randInt * 500;
             let assetName = assetNamePrefix + (randInt%3+1);
@@ -138,7 +138,7 @@ class playScene3 extends Phaser.Scene{
         }
 
         assetNamePrefix = "fore_3r";
-        for(let h = -3000; h < this.physics.world.bounds.bottom-6000; h += 1050){
+        for(let h = -3000; h < this.physics.world.bounds.bottom-70000; h += 1050){
             let randInt = Math.floor(Math.random()*6)+1; // 1~6
             let deltaHeight = randInt * 500;
             let assetName = assetNamePrefix + (randInt%3+1);
