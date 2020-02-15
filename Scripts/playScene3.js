@@ -308,7 +308,7 @@ class playScene3 extends Phaser.Scene{
            return;
        }
        end.triggered=true;
-       player.scene.whiteAlphaTar = 0;
+       player.scene.whiteAlphaTar = 1;
        //player.body.setImmovable(true);
        //player.body.setAllowGravity(false);
        player.scene.checkpointData.CurrentCheckpoint = 1;

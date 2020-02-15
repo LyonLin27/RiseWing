@@ -286,10 +286,11 @@ class playScene1 extends Phaser.Scene{
             return;
         }
         end.triggered=true;
-        player.scene.whiteAlphaTar = 0;
+        player.scene.whiteAlphaTar = 1;
         player.body.setImmovable(true);
         player.body.setAllowGravity(false);
         player.scene.checkpointData.CurrentCheckpoint = 1;
+        localStorage.setItem('save_level',2);
         localStorage.setItem("save_checkpoint", 1);
         player.scene.time.delayedCall(1000, ()=>{
             player.scene.music.stop();
