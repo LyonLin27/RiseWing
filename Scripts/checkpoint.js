@@ -17,6 +17,7 @@ class Checkpoint extends Phaser.GameObjects.Sprite {
     }
 
     create(){
+        //test
         //this.item.body.setSize(20,20);
         this.checkPoint.scale = 0.6;
         this.checkPoint.body.gravity.set(0, 1000);
