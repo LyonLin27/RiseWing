@@ -24,6 +24,6 @@ class Checkpoint extends Phaser.GameObjects.Sprite {
     }
 
     update(){
-        
+        // test 2
     }
 }
