@@ -8,6 +8,7 @@ class Player extends Phaser.GameObjects.Sprite {
         this.player = this.scene.physics.add.sprite(x, y, "player");
         this.player.isPlayer = true;
         this.player.onGround = false;
+        this.player.airTimeProtection = 0
 
         this.capSpdYUp = 800;         // cap vertical spd, used for positive and negative
         this.capSpdYDn = 600;
@@ -135,6 +136,11 @@ class Player extends Phaser.GameObjects.Sprite {
                 let currVelY = player.body.velocity.y;
                 player.setVelocityY(/**currVelY**/-this.thrustSpdY*this.chargeTime/500);
 
+                // prevent ground bug
+                this.inAir = true;
+                this.player.onGround = false;
+                this.player.airTimeProtection = 0.2
+
                 // reset chargeTIme
                 this.chargeTime = 0;
 
@@ -153,6 +159,7 @@ class Player extends Phaser.GameObjects.Sprite {
                     this.inAir = true;
                     this.player.onGround = false;
                     player.body.velocity.x = this.airVelX;
+                    player.airTimeProtection -= delta
 
                     // if rising
                     if(player.body.velocity.y < 0){
@@ -242,7 +249,7 @@ class Player extends Phaser.GameObjects.Sprite {
 
     // callback function when player is on platform, sync spd
     SyncSpd(player, platform){
-        if(player.body.touching.down && platform.body.touching.up){
+        if(player.body.touching.down && platform.body.touching.up && player.airTimeProtection < 0){
             player.body.velocity.x = platform.body.velocity.x;
             player.body.velocity.y = platform.body.velocity.y;
             player.onGround = true;
