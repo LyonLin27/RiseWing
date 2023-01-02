@@ -122,13 +122,14 @@ class Player extends Phaser.GameObjects.Sprite {
 
                 //X
                 if(movRight){
+                    this.airVelX = this.initSpdX;
                     player.setVelocityX(this.initSpdX);
                     player.flipX = true;
                 }else{
+                    this.airVelX = -this.initSpdX;
                     player.setVelocityX(-this.initSpdX);
                     player.flipX = false;
                 }
-                this.airVelX = player.body.velocity.x;
 
                 //Y
                 let currVelY = player.body.velocity.y;
